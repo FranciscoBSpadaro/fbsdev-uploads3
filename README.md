@@ -3,6 +3,7 @@ Upload de imagens s3+ mongodb
 
 
 arquivo .env
+
 APP_URL=http://localhost:3000
 MONGO_URL=mongodb://localhost:27017/   
 STORAGE_TYPE=local  or s3

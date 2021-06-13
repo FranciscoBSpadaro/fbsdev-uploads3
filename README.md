@@ -26,6 +26,6 @@ AWS_ACESS_KEY_ID=
 AWS_SECRET_ACESS_KEY=
 AWS_DEFAULT_REGION=us-east-1
 ````
-configuration example for  .env  local mode if s3 storage_type should be ' s3 '
+this is configuration example for  .env  local dev mode if prod use s3 with  STORAGE_TYPE=s3
 
 credits : https://www.youtube.com/watch?v=MkkbUfcZUZM&t=50s

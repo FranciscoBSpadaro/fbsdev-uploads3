@@ -1,5 +1,9 @@
 # UploadImagesS3
 Upload de imagens s3+ mongodb
+install docker
+
+1. Pull mongo image from docker hub: docker pull mongo
+2. Run image: docker run --name my_mongo -p 27017:27017 -d mongo
 
 
 arquivo .env

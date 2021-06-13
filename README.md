@@ -29,4 +29,6 @@ AWS_DEFAULT_REGION=us-east-1
 this is configuration example for  .env  local dev mode if prod use s3 with  STORAGE_TYPE=s3
 and add bucket name and aws credentials 
 
+use insonmmia for upload images , list , and delete 
+
 credits : https://www.youtube.com/watch?v=MkkbUfcZUZM&t=50s

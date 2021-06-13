@@ -13,7 +13,8 @@ start script: ' yarn dev'   - for dev environment
 'yarn start' for production
 
 install dotenv for local development
-arquivo .env
+
+configuration example for  .env
 
 
 APP_URL=http://localhost:3000

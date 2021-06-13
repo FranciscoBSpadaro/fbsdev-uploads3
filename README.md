@@ -24,3 +24,6 @@ AWS_ACESS_KEY_ID=
 AWS_SECRET_ACESS_KEY=
 AWS_DEFAULT_REGION=us-east-1
 
+
+
+credits : https://www.youtube.com/watch?v=MkkbUfcZUZM&t=50s

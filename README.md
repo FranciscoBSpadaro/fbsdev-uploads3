@@ -14,7 +14,7 @@ start script: ' yarn dev'   - for dev environment
 
 install dotenv for local development
 
-configuration example for  .env  local mode if s3 storage_type should be ' s3 '
+
 create .env file in root of project and add the follow lines
 
 ````
@@ -26,6 +26,6 @@ AWS_ACESS_KEY_ID=
 AWS_SECRET_ACESS_KEY=
 AWS_DEFAULT_REGION=us-east-1
 ````
-
+configuration example for  .env  local mode if s3 storage_type should be ' s3 '
 
 credits : https://www.youtube.com/watch?v=MkkbUfcZUZM&t=50s

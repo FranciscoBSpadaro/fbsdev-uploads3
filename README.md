@@ -15,6 +15,7 @@ start script: ' yarn dev'   - for dev environment
 install dotenv for local development
 
 configuration example for  .env  local mode if s3 storage_type should be ' s3 '
+create .env file in root of project and add the follow lines
 
 ````
 APP_URL=http://localhost:3000

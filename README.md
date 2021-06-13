@@ -3,7 +3,7 @@ Upload  images s3 + mongodb
 
 install all modules with npm install
 
-install docker for local environment
+install docker for local development with mongodb
 
 1. Pull mongo image from docker hub: docker pull mongo
 2. Run image: docker run --name my_mongo -p 27017:27017 -d mongo

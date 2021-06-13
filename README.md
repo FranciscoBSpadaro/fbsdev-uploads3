@@ -31,8 +31,10 @@ and add bucket name and aws credentials
 
 use insonmmia for upload images , list , and delete 
 
-get route = http://localhost:3000/posts
-post route = http://localhost:3000/posts  with multpart mode  in name field put ' file '  and next select you image for upload
-delete route = http://localhost:3000/posts/ ' id of image ' will delete using image id  and it will be removed from storage and mongodb
+# get route = http://localhost:3000/posts
+
+# post route = http://localhost:3000/posts  with multpart mode  in name field put ' file '  and next select you image for upload
+
+# delete route = http://localhost:3000/posts/ ' id of image ' will delete using image id  and it will be removed from storage and mongodb
 
 credits : https://www.youtube.com/watch?v=MkkbUfcZUZM&t=50s

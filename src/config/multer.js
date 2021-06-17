@@ -40,13 +40,15 @@ module.exports = {
   dest: path.resolve(__dirname, '..', '..', 'tmp', 'uploads'),
   storage: storageTypes[process.env.STORAGE_TYPE],
   limits: {
-    fileSize: 2 * 1024 * 1024
+    fileSize: 4 * 1024 * 1024
   },
   fileFilter: (req, file, cb) => {
     const allowedMimes = [
       'image/jpeg',
       'image/pjpeg',
       'image/png',
+      'image/jpg',
+      'image/bmp',
       'image/gif'
     ]
 

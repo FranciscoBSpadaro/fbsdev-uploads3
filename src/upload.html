@@ -1,0 +1,21 @@
+<html>
+    <form action="http://localhost:3000/posts" method="post" enctype="multipart/form-data">
+       <input type="file" name="file" accept="image/gif, image/jpeg, image/png, image/jpg, image/bmp" onchange="previewFile()"><br>
+       <img src="" height="200" alt="Image preview...">
+        <button type="submit">Submit</button>
+      </form>
+      <br/>
+      <h2>List all Uploaded images </h2>
+      <h3>Use Json Viewer extension for google chrome </h3>
+      <form action="http://localhost:3000/posts" method="GET" enctype="multipart/form-data">
+         <button type="submit">List all images </button>
+       </form>
+
+      <script>
+        function previewFile() {
+          const preview = document.querySelector('img');
+          const file = document.querySelector('input[type=file]').files[0];
+          const reader = new FileReader();
+        }
+        </script>
+</html>

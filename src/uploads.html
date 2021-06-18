@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div>
+        <h1>Image Upload(jpg, jpeg ,gif ,bmp and png Max 8MB)</h1>
+        <form action="http://localhost:3000/posts" method="post" enctype="multipart/form-data">
+        <input class="file" type="file" id="file">
+        <div id="image-grid" height="200"></div>
+            <br/>
+            <button class="button">Submit</button>
+          
+        </div>
+      </div>
+    </form>
+    <br/>
+    <h2>List all Uploaded images </h2>
+    <h3>Use Json Viewer extension for google chrome </h3>
+    <form action="http://localhost:3000/posts" method="GET" enctype="multipart/form-data">
+       <button type="submit" >List all images </button>
+     </form>
+</body>
+
+</html>

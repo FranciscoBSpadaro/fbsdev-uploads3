@@ -11,8 +11,9 @@
     <div>
         <h1>Image Upload(jpg, jpeg ,gif ,bmp and png Max 8MB)</h1>
         <form action="http://localhost:3000/posts" method="post" enctype="multipart/form-data">
-        <input class="file" type="file" id="file">
+        <input class="file" type="file" accept="image/*" name="image" id="file"  onchange="loadFile(event)">
         <div id="image-grid"></div>
+        <p><img id="output" width="200" /></p>
             <br/>
             <button class="button">Submit</button>
           

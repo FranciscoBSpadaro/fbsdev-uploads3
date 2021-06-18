@@ -12,19 +12,7 @@ function stateHandle() {
 }
 
 
-const fileUploader = document.getElementById('file');
-const reader = new FileReader();
-const imageGrid = document.getElementById('image-grid');
-
-fileUploader.addEventListener('change', (event) => {
-  const files = event.target.files;
-  const file = files[0];
-  reader.readAsDataURL(file);
-  
-  reader.addEventListener('load', (event) => {
-    const img = document.createElement('img');
-    imageGrid.appendChild(img);
-    img.src = event.target.result;
-    img.alt = file.name;
-  });
-});
+let loadFile = function(event) {
+	let image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};

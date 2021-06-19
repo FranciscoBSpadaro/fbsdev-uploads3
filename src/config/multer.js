@@ -13,7 +13,7 @@ const storageTypes = {
        console.log(file);
       crypto.randomBytes(16, (err, hash) => {
         if (err) cb(err)
-
+        // criando novo nome ao arquivo , com codigo hexadecimal e remover o nome todo do arquivo e manter apenas o ponto final e a extensão
         file.key = `${hash.toString('hex')}-${file.originalname.substring(file.originalname.lastIndexOf('.'), file.originalname.length)}`
 
         cb(null, file.key)
@@ -29,7 +29,7 @@ const storageTypes = {
       crypto.randomBytes(16, (err, hash) => {
         if (err) cb(err)
 
-        const fileName = `${hash.toString('hex')}-${file.originalname}`
+        const fileName = `${hash.toString('hex')}-${file.originalname.substring(file.originalname.lastIndexOf('.'), file.originalname.length)}`
 
         cb(null, fileName)
       })

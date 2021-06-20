@@ -22,13 +22,18 @@ routes.post('/posts', multer(multerConfig).single('file'), async (req, res) => {
 
   return res.json(post)
 })
-
+// adicionado try e catch caso nao achar o id do objeto para deletar
 routes.delete('/posts/:id', async (req, res) => {
+  try{
   const post = await Post.findById(req.params.id)
-
   await post.remove()
+  }
+  catch (error) {
+  return res.status(400).json({ error: error.toString() });
+}
 
-  return res.send()
-})
+return res.send();
+});
+
 
 module.exports = routes

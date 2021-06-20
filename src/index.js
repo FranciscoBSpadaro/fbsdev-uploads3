@@ -11,7 +11,6 @@ const app = express()
 const multer = require('multer')
 
 
-
 /**
  * Database setup
  */
@@ -36,6 +35,7 @@ app.use(require('./routes'))
 
 
 app.listen(3000)
+// error handlers
 // codigo de erro no upload caso arquivo for muito grande
 app.use(function (err, req, res, next) {
   if (err instanceof multer.MulterError) {

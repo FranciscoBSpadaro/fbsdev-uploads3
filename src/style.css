@@ -1,5 +1,12 @@
-img {
-    height: 250px;
-    width: 250px;
+#output {
+    height: 300px;
+    width: 300px;
+
+}
+
+#linkdev {
+    justify-content: center;
+    height: 150x;
+    width: 150x;
 
 }

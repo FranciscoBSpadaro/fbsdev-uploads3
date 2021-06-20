@@ -9,8 +9,9 @@ routes.get('/posts', async (req, res) => {
 
   return res.json(posts)
 })
-
+// adicionado try catch para evitar error para request vazio
 routes.post('/posts', multer(multerConfig).single('file'), async (req, res) => {
+  try{
   const { originalname: name, size, key, location: url = '' } = req.file
 
   const post = await Post.create({
@@ -21,6 +22,10 @@ routes.post('/posts', multer(multerConfig).single('file'), async (req, res) => {
   })
 
   return res.json(post)
+}
+catch (error) {
+  return res.status(400).send('Invalid Request')
+}
 })
 // adicionado try e catch caso nao achar o id do objeto para deletar para nao derrubar o servidor
 routes.delete('/posts/:id', async (req, res) => {

@@ -32,8 +32,6 @@ routes.delete('/posts/:id', async (req, res) => {
   catch (error) {
   return res.status(400).send('ID Not Found or invalid ')
 }
-
-return res.send();
 });
 
 

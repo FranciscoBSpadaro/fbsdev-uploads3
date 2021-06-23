@@ -7,10 +7,12 @@ install docker for local development with mongodb
 
 1. Pull mongo image from docker hub: docker pull mongo
 2. Run image: docker run --name my_mongo -p 27017:27017 -d mongo
+or use mongo db atlas
+mongo_url  = mongodb+srv://user:password@cluster0.ian5y.mongodb.net/RepoName?retryWrites=true&w=majority
 
-start script: ' yarn dev'   - for dev environment
+start script: ' yarn dev  or npm dev'   - for dev environment
 
-'yarn start' for production
+'yarn start or npm start' for production
 
 install dotenv for local development
 

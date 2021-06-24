@@ -9,7 +9,7 @@ install docker for local development with mongodb
 2. Run image: docker run --name my_mongo -p 27017:27017 -d mongo
 #### or use mongodb atlas
 https://account.mongodb.com/account/login
-and use this mongo_url = 
+and use this variable
 mongo_url  = mongodb+srv://user:password@cluster0.ian5y.mongodb.net/RepoName?retryWrites=true&w=majority
 change user and password...
 
@@ -39,5 +39,8 @@ use insonmmia for upload images , list , and delete
 ### post route = http://localhost:3000/posts  with multpart mode  in name field put ' file '  and next select you image for upload
 
 ### delete route = http://localhost:3000/posts/ ' id of image ' will delete using image id  and it will be removed from storage and mongodb
+
+### for production this project i will use heroku
+
 
 

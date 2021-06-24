@@ -1,8 +1,8 @@
 const routes = require('express').Router()
 const multer = require('multer')
-const multerConfig = require('./config/multer')
+const multerConfig = require('./src/config/multer')
 
-const Post = require('./models/Post')
+const Post = require('./src/models/Post')
 
 routes.get('/posts', async (req, res) => {
   const posts = await Post.find()

@@ -7,16 +7,17 @@ install docker for local development with mongodb
 
 1. Pull mongo image from docker hub: docker pull mongo
 2. Run image: docker run --name my_mongo -p 27017:27017 -d mongo
-or use mongo db atlas
+#### or use mongodb atlas
+https://account.mongodb.com/account/login
+and use this mongo_url = 
 mongo_url  = mongodb+srv://user:password@cluster0.ian5y.mongodb.net/RepoName?retryWrites=true&w=majority
+change user and password...
 
-start script: ' yarn dev  or npm dev'   - for dev environment
+start script: ' yarn dev  or npm run dev'   - for dev environment
 
 'yarn start or npm start' for production
 
-install dotenv for local development
-
-
+#### dotenv.
 create .env file in root of project and add the follow lines
 
 ````
@@ -39,4 +40,4 @@ use insonmmia for upload images , list , and delete
 
 ### delete route = http://localhost:3000/posts/ ' id of image ' will delete using image id  and it will be removed from storage and mongodb
 
-credits : https://www.youtube.com/watch?v=MkkbUfcZUZM&t=50s
+

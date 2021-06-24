@@ -34,7 +34,7 @@ app.use(
 app.use(require('./routes'))
 
 
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
 // error handlers
 // codigo de erro no upload caso arquivo for muito grande
 app.use(function (err, req, res, next) {

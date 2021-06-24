@@ -41,6 +41,10 @@ use insonmmia for upload images , list , and delete
 ### delete route = http://localhost:3000/posts/ ' id of image ' will delete using image id  and it will be removed from storage and mongodb
 
 ### for production this project i will use heroku
+Procfile add to project.
+in heroku dashboar go to settings / config vars and add environment variables
+APP_URL=  heroku app url
+and all other variables like .env local file
 
 
 

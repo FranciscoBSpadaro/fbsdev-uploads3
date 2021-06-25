@@ -22,10 +22,7 @@ mongoose.connect(
   }
 )
 
-app.use(cors(options =>
-  options.WithOrigins("https://fbsdev-uploads3.herokuapp.com")
-         .AllowAnyHeader()
-         .AllowAnyMethod()))
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(morgan('dev'))

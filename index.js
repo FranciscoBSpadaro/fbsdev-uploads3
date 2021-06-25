@@ -35,7 +35,7 @@ app.use(
 )
 // liberar acesso para o cors
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin-Header', '*');
   next();
 })
 // liberar acesso a rota post para  XMLHttpRequest

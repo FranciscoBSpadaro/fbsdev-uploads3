@@ -39,7 +39,7 @@ app.use((req, res, next) => {
   next();
 })
 // liberar acesso a rota post para  XMLHttpRequest
-app.get('/fetch', (req, res) => {
+app.get('/posts', (req, res) => {
   request(
     { url: req.query.url },
     (error, response, body) => {

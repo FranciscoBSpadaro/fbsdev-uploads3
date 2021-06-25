@@ -33,9 +33,9 @@ app.use(
   '/files',
   express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
 )
-// liberar request to XMLHttpRequest do  header para todas requests
+// liberar request to XMLHttpRequest da origin do meu front end
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin-Header', '*');
+  res.header('Access-Control-Allow-Origin', 'https://fbsdev-uploadss3.herokuapp.com/');
   next();
 })
 // liberar acesso a rota post para  XMLHttpRequest

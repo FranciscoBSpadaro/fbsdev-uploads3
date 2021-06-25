@@ -10,6 +10,26 @@ const app = express()
 // multer importado para tratar errorHandler de arquivo grande 
 const multer = require('multer')
 
+// liberando request post XMLHttpRequest que dava error no cors no heroku
+const request = require('request');
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+app.get('/fetch', (req, res) => {
+  request(
+    { url: req.query.url },
+    (error, response, body) => {
+      if (error || response.statusCode !== 200) {
+        return res.status(500).send('error');
+      }
+      res.send(body);
+    }
+  )
+});
+
 
 /**
  * Database setup

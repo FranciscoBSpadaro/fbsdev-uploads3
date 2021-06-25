@@ -9,6 +9,8 @@ const cors = require('cors')
 const app = express()
 // multer importado para tratar errorHandler de arquivo grande 
 const multer = require('multer')
+// request para tratar erros de Access to XMLHttpRequest
+const request = require('request');
 
 
 /**
@@ -31,6 +33,24 @@ app.use(
   '/files',
   express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
 )
+// liberar acesso para o cors
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+})
+// liberar acesso a rota post para  XMLHttpRequest
+app.post('/fetch', (req, res) => {
+  request(
+    { url: req.query.url },
+    (error, response, body) => {
+      if (error || response.statusCode !== 200) {
+        return res.status(500).send('error');
+      }
+      res.send(body);
+    }
+  )
+});
+
 
 app.use(require('./routes'))
 

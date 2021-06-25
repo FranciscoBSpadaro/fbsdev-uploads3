@@ -33,9 +33,9 @@ app.use(
   '/files',
   express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
 )
-// liberar acesso para o cors
+// liberar request to XMLHttpRequest do  header para todas requests
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin-Header', '*');
   next();
 })
 // liberar acesso a rota post para  XMLHttpRequest

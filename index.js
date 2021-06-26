@@ -33,6 +33,11 @@ app.use(
   '/files',
   express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
 )
+// liberar request to XMLHttpRequest da origin do meu front end
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://fbsdev-uploadss3.herokuapp.com');
+  next();
+})
 
 app.use(require('./routes'))
 

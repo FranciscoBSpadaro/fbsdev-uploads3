@@ -10,6 +10,8 @@ const app = express()
 // multer importado para tratar errorHandler de arquivo grande 
 const multer = require('multer')
 
+const allowCrossDomain = require('./allowcrossdomain')
+
 
 
 /**

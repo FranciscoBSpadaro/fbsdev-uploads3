@@ -47,5 +47,5 @@ app.listen(process.env.PORT || 3000)
 // codigo de erro no upload caso arquivo for muito grande
 app.use(function (err, req, res, next) {
   if (err instanceof multer.MulterError) {
-  res.status(418).send('File is Too Large!')
+  res.status(418).json('File is too Large !!')
 }})

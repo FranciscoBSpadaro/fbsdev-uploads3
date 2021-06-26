@@ -24,7 +24,7 @@ routes.post('/posts', multer(multerConfig).single('file'), async (req, res) => {
   return res.json(post)
 }
 catch (error) {
-  return res.status(400).send('Invalid Request')
+  return res.status(400).json('Invalid Request')
 }
 })
 // adicionado try e catch caso nao achar o id do objeto para deletar para nao derrubar o servidor
@@ -32,10 +32,10 @@ routes.delete('/posts/:id', async (req, res) => {
   try{
   const post = await Post.findById(req.params.id)
   await post.remove()
-  return res.status(200).send('Image Deleted')
+  return res.status(200).json('Image Deleted')
   }
   catch (error) {
-  return res.status(400).send('ID Not Found or invalid ')
+  return res.status(400).json('ID Not Found or invalid ')
 }
 });
 

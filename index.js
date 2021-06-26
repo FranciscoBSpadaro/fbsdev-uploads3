@@ -16,7 +16,6 @@ const app = express()
 mongoose.connect(
   process.env.MONGO_URL,
   {
-    useUnifiedTopology: true,
     useNewUrlParser: true
   }
 )
@@ -35,4 +34,4 @@ app.use(
 app.use(require('./routes'))
 
 //process.env.port para o heroku escolher a porta que vai usar
-app.listen(process.env.PORT)
+app.listen(process.env.PORT || 3000)

@@ -38,6 +38,7 @@ app.use(
 // liberar request to XMLHttpRequest da origin do meu front end
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://fbsdev-uploadss3.herokuapp.com');
+  res.header('Access-Control-Expose-Headers', 'access-control-allow-origin');
   next();
 })
 

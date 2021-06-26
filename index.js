@@ -4,13 +4,11 @@ const express = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const path = require('path')
-const cors = require('cors')
+
 
 const app = express()
 // multer importado para tratar errorHandler de arquivo grande 
 const multer = require('multer')
-
-const allowCrossDomain = require('./allowcrossdomain')
 
 
 
@@ -25,10 +23,6 @@ mongoose.connect(
   }
 )
 
-
-app.use(cors())
-// liberar request to XMLHttpRequest da origin *
-app.use(allowCrossDomain)
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))

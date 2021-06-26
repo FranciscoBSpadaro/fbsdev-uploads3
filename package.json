@@ -10,9 +10,6 @@
   "keywords": [],
   "author": "FBS-DEV",
   "license": "ISC",
-  "engines": {
-    "node": "14.16.0"
-  },
   "dependencies": {
     "aws-sdk": "^2.927.0",
     "cors": "^2.8.5",

@@ -26,6 +26,13 @@ mongoose.connect(
 
 app.use(cors())
 
+// liberar request to XMLHttpRequest da origin do meu front end
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://fbsdev-uploadss3.herokuapp.com');
+  next();
+})
+
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(morgan('dev'))

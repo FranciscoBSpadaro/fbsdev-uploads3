@@ -10,11 +10,11 @@ routes.get('/posts', async (req, res) => {
   return res.json(posts)
 })
 // adicionado try catch para evitar error para request vazio
-routes.post('/posts', multer(multerConfig).single('file'),  (req, res) => {
+routes.post('/posts', multer(multerConfig).single('file'), async (req, res) => {
   try{
   const { originalname: name, size, key, location: url = '' } = req.file
 
-  const post =  Post.create({
+  const post = await Post.create({
     name,
     size,
     key,

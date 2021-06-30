@@ -48,3 +48,4 @@ and all other variables like .env local file
 
 
 
+tutorial heroku para uso do bucket s3  https://devcenter.heroku.com/articles/s3-upload-node

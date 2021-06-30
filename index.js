@@ -11,6 +11,13 @@ const app = express()
 const multer = require('multer')
 
 
+//exibir ip da instancia em execuçao 
+const os = require('os');
+
+const networkInterfaces = os.networkInterfaces();
+
+console.log(networkInterfaces);
+
 
 /**
  * Database setup

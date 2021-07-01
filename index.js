@@ -15,14 +15,17 @@ const multer = require('multer')
 /**
  * Database setup
  */
-mongoose.connect(
+ try {
+ mongoose.connect(
   process.env.MONGO_URL,
   {
     useUnifiedTopology: true,
     useNewUrlParser: true
   }
 )
-
+} catch (error) {
+  handleError(error);
+}
 
 app.use(cors())
 

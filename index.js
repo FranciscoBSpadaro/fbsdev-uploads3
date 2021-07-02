@@ -49,7 +49,7 @@ app.use(
 app.use(require('./routes'))
 
 //process.env.port para o heroku escolher a porta que vai usar
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT)
 // error handlers
 // codigo de erro no upload caso arquivo for muito grande
 /* app.use(function (err, req, res, next) {

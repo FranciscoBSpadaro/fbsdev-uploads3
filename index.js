@@ -41,10 +41,15 @@ app.use((req, res, next) => {
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(morgan('dev'))
-app.use(
+
+
+app.use(req, file, cb) 
+     cb(null, path.resolve(__dirname, 'build'))
+
+/**app.use(
   '/files',
   express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
-)
+)/** */
 
 app.use(require('./routes'))
 

@@ -31,20 +31,20 @@ const multer = require('multer')
 
 app.use(cors())
 
-// liberar request to XMLHttpRequest da origin do meu front end
+/* liberar request to XMLHttpRequest da origin do meu front end
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   next();
-})
+})//** */
 
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(morgan('dev'))
-/*app.use(
+app.use(
   '/files',
   express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
-)//** */
+)
 
 app.use(require('./routes'))
 

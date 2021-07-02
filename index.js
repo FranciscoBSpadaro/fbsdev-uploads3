@@ -4,7 +4,7 @@ const express = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const path = require('path')
-const cors = require('cors')
+
 const app = express()
 
 // multer importado para tratar errorHandler de arquivo grande 
@@ -28,14 +28,6 @@ const multer = require('multer')
       handleError(error)
     }
 
-
-app.use(cors())
-
-// liberar request to XMLHttpRequest da origin do meu front end
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-})
 
 
 app.use(express.json())

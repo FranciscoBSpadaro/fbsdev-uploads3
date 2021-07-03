@@ -10,6 +10,29 @@ const app = express()
 // multer importado para tratar errorHandler de arquivo grande 
 // const multer = require('multer')
 
+const request = require('request');
+
+   let json = {
+        "id": id,
+        "filename": filename
+    };
+    let options = {
+        uri: "http://[::1]:5000" + constants.PATH_TO_API,
+        port:80,
+        method: 'POST',
+        json: json
+    };
+    request(options, function (error, response, body) {
+        if (error) {
+            console.error("httpRequests : error " + error);
+        }
+        if (response) {
+            let statusCode = response.status_code;
+            if (callback) {
+                callback(body);
+            }
+        }
+    });
 
 
 /**

@@ -51,7 +51,7 @@ app.use('/files',express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
 app.use(require('./routes'))
 
 //process.env.port para o heroku escolher a porta que vai usar
-app.listen(5000)
+app.listen(process.env.PORT || 3000)
 // error handlers
 // codigo de erro no upload caso arquivo for muito grande
 /* app.use(function (err, req, res, next) {

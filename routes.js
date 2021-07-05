@@ -1,10 +1,10 @@
 const routes = require('express').Router();
 const multer = require('multer');
-const multerConfig = require("./config/multer");
+const multerConfig = require("./src/config/multer");
 
 
 
-const Post = require('./models/post');
+const Post = require('./src/models/Post');
 
 routes.delete('/posts/:id', async (req, res) =>{
      const post = await Post.findById(req.params.id);

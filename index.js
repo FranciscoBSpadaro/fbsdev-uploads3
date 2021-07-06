@@ -12,7 +12,7 @@ const multer = require('multer')
 
 app.use(cors())
 //liberar request to XMLHttpRequest da origin do meu front end
-app.all('*', function(req, res, next) {
+app.use('*', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
   res.header('Access-Control-Allow-Headers',  'Origin, X-Requested-With, Content-Type, Accept, Authorization')

@@ -10,7 +10,7 @@ const app = express()
 // multer importado para tratar errorHandler de arquivo grande 
 const multer = require('multer')
 
-app.use(cors())
+
 //liberar request to XMLHttpRequest da origin do meu front end
 app.use('*', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
@@ -19,6 +19,7 @@ app.use('*', function(req, res, next) {
   if ('OPTIONS' == req.method) {
   res.sendStatus(200)
   } else {
+    app.use(cors())
     next()
   }
 })

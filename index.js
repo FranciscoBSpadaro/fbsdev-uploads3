@@ -10,8 +10,13 @@ const app = express()
 // multer importado para tratar errorHandler de arquivo grande 
 const multer = require('multer')
 
+ //liberar request to XMLHttpRequest da origin do meu front end
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  app.use(cors())
+  next()
+})
 
-app.use(cors())
 
 /**
  * Database setup
@@ -29,14 +34,6 @@ app.use(cors())
       handleError(error)
     }
 
-
-
-
- /*liberar request to XMLHttpRequest da origin do meu front end
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-})/** */
 
 
 app.use(express.json())

@@ -11,7 +11,7 @@ const app = express()
 const multer = require('multer')
 
 
-//liberar request to XMLHttpRequest da origin do meu front end
+/**liberar request to XMLHttpRequest da origin do meu front end
 app.use('*', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', 'https://fbsdev-uploadss3.herokuapp.com')
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
@@ -41,7 +41,7 @@ app.use('*', function(req, res, next) {
     }
 
 
-
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(morgan('dev'))

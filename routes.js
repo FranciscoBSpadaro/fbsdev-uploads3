@@ -5,6 +5,7 @@ const multerConfig = require('./src/config/multer')
 const Post = require('./src/models/Post')
 
 routes.get('/posts', async (req, res) => {
+<<<<<<< HEAD
   try{
   const posts = await Post.find()
   return res.json(posts)
@@ -12,6 +13,11 @@ routes.get('/posts', async (req, res) => {
   catch (error) {
   return res.status(500).json('Server Error')
 }
+=======
+  const posts = await Post.find()
+
+  return res.json(posts)
+>>>>>>> 6acc28a205db1e449f54979ec1d4939332adb272
 })
 // adicionado try catch para evitar error para request vazio
 routes.post('/posts', multer(multerConfig).single('file'), async (req, res) => {

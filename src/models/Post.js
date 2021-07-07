@@ -20,7 +20,15 @@ const PostSchema = new mongoose.Schema({
 PostSchema.pre('save', function () {
   if (!this.url) {
     this.url = `${process.env.APP_URL}/files/${this.key}`
+    .promise()
+    .then(response => {
+      console.log(response.status)
+    })
+    .catch(response => {
+      console.log(response.status)
+    })
   }
+  
 })
 
 PostSchema.pre('remove', function () {

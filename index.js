@@ -37,7 +37,7 @@ app.use('*', function(req, res, next) {
     }
     )
     } catch (error) {
-      handleError(error)
+      console.log(error)
     }
 
 

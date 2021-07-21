@@ -1,5 +1,6 @@
+if (process.env.APP_URL !== 'http://localhost:3000') {
 require('dotenv').config()
-
+}
 const express = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')

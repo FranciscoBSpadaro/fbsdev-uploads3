@@ -5,7 +5,7 @@ const express = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const path = require('path')
-const cors = require('cors')
+// const cors = require('cors')
 const app = express()
 
 // multer importado para tratar errorHandler de arquivo grande 
@@ -43,7 +43,7 @@ app.use('*', function(req, res, next) {
     }
 
 
-app.use(cors())
+// app.use(cors())
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))

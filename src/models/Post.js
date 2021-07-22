@@ -19,7 +19,7 @@ const PostSchema = new mongoose.Schema({
 PostSchema.pre("save", function () {
   if (!this.url) {
     this.url = `${process.env.APP_URL}/files/${this.key}`
-  } else process.env.STORAGE_TYPE === "s3"
+  } else (process.env.STORAGE_TYPE === "s3") 
   {
     return s3.putObject({
         Bucket: process.env.BUCKET,
@@ -35,7 +35,7 @@ PostSchema.pre("remove", function () {
         Bucket: process.env.BUCKET,
         Key: this.key,
       })
-      .promise();
+      .promise()
   } else {
     return promisify(fs.unlink)(
       path.resolve(__dirname, "..", "..", "temp", "uploads", this.key)

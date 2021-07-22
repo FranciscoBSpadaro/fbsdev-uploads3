@@ -18,7 +18,7 @@ const PostSchema = new mongoose.Schema({
 })
 
 PostSchema.pre('save', async function () {
-  if (process.env.STORAGE_TYPE === 's3') {
+  (process.env.STORAGE_TYPE === 's3') 
     try {
       const response = await s3.putObject({
           Bucket: process.env.BUCKET_NAME,
@@ -29,7 +29,6 @@ PostSchema.pre('save', async function () {
     } catch (response_1) {
       console.log(response_1.status)
     }
-  } 
 })
 
 PostSchema.pre('remove', async function () {

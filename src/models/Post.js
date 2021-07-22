@@ -17,18 +17,19 @@ const PostSchema = new mongoose.Schema({
   }
 })
 
-PostSchema.pre('save', function () {
-  if (!this.url) {
-    this.url = `${process.env.APP_URL}/files/${this.key}`
-    .promise()
-    .then(response => {
+PostSchema.pre('save', async function () {
+  if (process.env.STORAGE_TYPE === 's3') {
+    try {
+      const response = await s3.putObject({
+          Bucket: process.env.BUCKET_NAME,
+          Key: this.key
+        })
+        .promise()
       console.log(response.status)
-    })
-    .catch(response => {
-      console.log(response.status)
-    })
-  }
-  
+    } catch (response_1) {
+      console.log(response_1.status)
+    }
+  } 
 })
 
 PostSchema.pre('remove', async function () {

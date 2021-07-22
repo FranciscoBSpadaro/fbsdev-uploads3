@@ -27,7 +27,7 @@ PostSchema.pre('save', async function () {
         .promise()
       console.log(response.status)
     } catch (response_1) {
-      console.log(response_1.status)
+      console.error(response_1.error)
     }
 })
 
@@ -41,7 +41,7 @@ PostSchema.pre('remove', async function () {
         .promise()
       console.log(response.status)
     } catch (response_1) {
-      console.log(response_1.status)
+      console.error(response_1.error)
     }
   } else {
     return promisify(fs.unlink)(

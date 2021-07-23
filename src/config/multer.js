@@ -57,7 +57,7 @@ module.exports = {
     if (allowedMimes.includes(file.mimetype)) {
       cb(null, true)   // if allowedMimes 200 ok
     } else {
-      cb(null, false) // return ' invalid request '
+      cb(null, false) // retorna msg de erro definido no routes.post catch error ' invalid request '
     }
   }
 }

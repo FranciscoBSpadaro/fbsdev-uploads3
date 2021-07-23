@@ -28,9 +28,10 @@ BUCKET_NAME=
 AWS_ACESS_KEY_ID=
 AWS_SECRET_ACESS_KEY=
 AWS_DEFAULT_REGION=us-east-1
+NODE_ENV=development
 ````
 this is configuration example for  .env  local dev mode if prod use s3 with  STORAGE_TYPE=s3
-and add bucket name and aws credentials 
+and add bucket name and aws credentials  
 
 use insonmmia for upload images , list , and delete 
 
@@ -44,8 +45,10 @@ use insonmmia for upload images , list , and delete
 Procfile add to project.
 in heroku dashboar go to settings / config vars and add environment variables
 APP_URL=  heroku app url
+NODE_ENV=production
 and all other variables like .env local file
 
 
 
 tutorial heroku para uso do bucket s3  https://devcenter.heroku.com/articles/s3-upload-node
+não necessario para esse app

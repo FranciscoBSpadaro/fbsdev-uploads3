@@ -1,4 +1,4 @@
-if (process.env.APP_URL !== 'http://localhost:3000') {
+if (process.env.NODE_ENV !== 'production') { // se ambiente for difente de produção então use o dotenv , no caso ambiente development
 require('dotenv').config()
 }
 const express = require('express')

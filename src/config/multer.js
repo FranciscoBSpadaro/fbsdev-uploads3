@@ -55,9 +55,9 @@ module.exports = {
     ]
 
     if (allowedMimes.includes(file.mimetype)) {
-      cb(null, true)
+      cb(null, true)   // if allowedMimes 200 ok
     } else {
-      cb(new Error('Invalid file type.'))
+      cb(null, false) // return ' invalid request '
     }
   }
 }

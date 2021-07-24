@@ -11,12 +11,7 @@ const app = express()
 // multer importado para tratar errorHandler de arquivo grande 
 const multer = require('multer')
 
-
-
-
-/**
- * Database setup
- */
+// database setup
  try {
   mongoose.connect(
    process.env.MONGO_URL,
@@ -29,22 +24,18 @@ const multer = require('multer')
       handleError(error)
       console.log(error)
     }
-
-
 // liberar request to XMLHttpRequest da origin do meu front end
+/** 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE,OPTIONS')
   app.use(cors())
   next()
-})
- 
-
-// app.use(cors())
+})  */
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(morgan('dev'))
-
 
 app.use('/files',express.static(path.resolve(__dirname, '..', 'tmp', 'uploads')))
 

@@ -33,7 +33,7 @@ const multer = require('multer')
 
 // liberar request to XMLHttpRequest da origin do meu front end
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://fbs-dev-uploads3.herokuapp.com/")
+  res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE,OPTIONS')
   app.use(cors())
   next()

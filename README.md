@@ -27,8 +27,18 @@ STORAGE_TYPE=local
 BUCKET_NAME=
 AWS_ACESS_KEY_ID=
 AWS_SECRET_ACESS_KEY=
-AWS_DEFAULT_REGION=us-east-1
+AWS_DEFAULT_REGION=
 NODE_ENV=development
+
+production example
+APP_URL=https://heroku.app...
+MONGO_URL=mongodb+srv://user:pass@cluster0.ian5y.mongodb.net/databasename?retryWrites=true&w=majority
+STORAGE_TYPE=s3
+BUCKET_NAME=bucketname
+AWS_ACESS_KEY_ID=
+AWS_SECRET_ACESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+NODE_ENV=production
 ````
 this is configuration example for  .env  local dev mode if prod use s3 with  STORAGE_TYPE=s3
 and add bucket name and aws credentials  

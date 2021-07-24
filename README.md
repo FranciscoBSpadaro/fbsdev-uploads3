@@ -40,10 +40,9 @@ AWS_SECRET_ACESS_KEY=
 AWS_DEFAULT_REGION=us-east-1
 NODE_ENV=production
 ````
-this is configuration example for  .env  local dev mode if prod use s3 with  STORAGE_TYPE=s3
-and add bucket name and aws credentials  
+  
 
-use insonmmia for upload images , list , and delete 
+using insonmmia for upload images , list , and delete 
 
 ### get route = http://localhost:3000/posts
 
@@ -53,10 +52,8 @@ use insonmmia for upload images , list , and delete
 
 ### for production this project i will use heroku
 Procfile add to project.
-in heroku dashboar go to settings / config vars and add environment variables
-APP_URL=  heroku app url
-NODE_ENV=production
-and all other variables like .env local file
+in heroku dashboad go to settings / config vars and add environment variables
+
 
 
 

@@ -2,6 +2,8 @@
 Upload  images s3 + mongodb
 online :   https://fbs-dev-uploads3.herokuapp.com/
 
+frontend repo : https://github.com/FranciscoBSpadaro/fbsdev-reacts3
+
 install all modules with npm install
 
 install docker for local development with mongodb

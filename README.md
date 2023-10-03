@@ -5,8 +5,11 @@ frontend repo : https://github.com/FranciscoBSpadaro/fbsdev-reacts3
 
 ### Caso de uso
 - Objetivo desse mini projeto é elaborar uma aplicação web de upload de imagens
-- Utilizar principios de CDN e ter escabilidade e distribuição ,  armazenar arquivos estáticos de imagens no bucket AWS S3 , visando redução de custos de armazendo e não armazenar no proprio servidor ou app.
-- Mongdb Atlas, vai armazenar endereços das imagens para o Aws s3 e gerenciar o CRUD.  " Ambiente Produção" . 
+- Utilizando Node.js + React , Mongodb, Heroku , AWS
+- Utilizar princípios de CDN 'Content Delivery Network' e ter escalabilidade e distribuição ,  armazenar arquivos estáticos de imagens no bucket AWS S3 , visando redução de custos de armazendo e não armazenar no proprio servidor ou app.
+- Mongdb Atlas, vai armazenar endereços das imagens para o Aws s3 e gerenciar o CRUD.  " Ambiente Produção" .
+- Dependências do backend : express, cors, mongoose, aws-sdk, morgan, multer, multers3
+- Dependências de Desenvolvimento : dotenv, nodemon
 - Docker para ambiente de desenvolvomento porem opcional.
 
 #### Iniciando o Projeto.

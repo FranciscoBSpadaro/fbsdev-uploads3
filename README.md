@@ -1,8 +1,19 @@
 # UploadImagesS3
 Upload  images s3 + mongodb
 online :   https://fbs-dev-uploads3.herokuapp.com/
-
 frontend repo : https://github.com/FranciscoBSpadaro/fbsdev-reacts3
+
+### Caso de uso
+- Objetivo desse mini projeto é elaborar uma aplicação web de upload de imagens
+- Utilizando Node.js + React , Mongodb, Heroku , AWS
+- Utilizar princípios de CDN 'Content Delivery Network' e ter escalabilidade e distribuição ,  armazenar arquivos estáticos de imagens no bucket AWS S3 , visando redução de custos de armazendo e não armazenar no proprio servidor ou app.
+- Mongdb Atlas, vai armazenar endereços das imagens para o Aws s3 e gerenciar o CRUD.  " Ambiente Produção" .
+- Dependências do backend : express ' framework para criação de API, Cors ' Cross-Origin Resource Sharing, Middleware que se integra com express para Requisiçoes HTTP' , Mongoose ' Mongoose é uma biblioteca de programação orientada a objetos que cria a modelagem de 
+ dados para o mongodb' , aws-sdk 'ferramenta de desenvolvido para integrações com serviços AWS' , morgan'registrar logs de requisição HTTP no terminal', Multer ' Middleware para tratar os multipart/form-data que são arquivos de uploading ' , multers3
+- Dependências de Desenvolvimento : dotenv, nodemon
+- Docker para ambiente de desenvolvomento porem opcional.
+
+#### Iniciando o Projeto.
 
 install docker for local development with mongodb if you want
 
@@ -10,7 +21,7 @@ install docker for local development with mongodb if you want
 2. Run image: docker run --name my_mongo -p 27017:27017 -d mongo
 #### or use mongodb atlas
 https://account.mongodb.com/account/login
-and use this variable
+and use this variable  example:
 mongo_url  = mongodb+srv://user:password@cluster0.ian5y.mongodb.net/RepoName?retryWrites=true&w=majority
 change user and password...
 
@@ -43,7 +54,7 @@ NODE_ENV=production
 ````
   
 use aws credential for api calls !!
-![alt text](https://fbsdevuploads.s3.amazonaws.com/awscredentialapicalls.jpg)
+
 
 using insonmmia for upload images , list , and delete 
 

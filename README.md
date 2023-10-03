@@ -1,7 +1,8 @@
 # UploadImagesS3
 Upload  images s3 + mongodb
 online :   https://fbs-dev-uploads3.herokuapp.com/
-frontend repo : https://github.com/FranciscoBSpadaro/fbsdev-reacts3
+edit : off line  heroku pedindo para adicionar cartão de credito para cobrar pelos serviços.  vou criar o projeto via AWS.
+
 
 ### Caso de uso
 - Objetivo desse mini projeto é elaborar uma aplicação web de upload de imagens
@@ -73,3 +74,5 @@ in heroku dashboad go to settings / config vars and add environment variables
 
 tutorial heroku para uso do bucket s3  https://devcenter.heroku.com/articles/s3-upload-node
 não necessario para esse app
+
+### frontend repo : https://github.com/FranciscoBSpadaro/fbsdev-reacts3

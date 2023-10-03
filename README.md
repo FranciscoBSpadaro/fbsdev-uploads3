@@ -8,7 +8,8 @@ frontend repo : https://github.com/FranciscoBSpadaro/fbsdev-reacts3
 - Utilizando Node.js + React , Mongodb, Heroku , AWS
 - Utilizar princípios de CDN 'Content Delivery Network' e ter escalabilidade e distribuição ,  armazenar arquivos estáticos de imagens no bucket AWS S3 , visando redução de custos de armazendo e não armazenar no proprio servidor ou app.
 - Mongdb Atlas, vai armazenar endereços das imagens para o Aws s3 e gerenciar o CRUD.  " Ambiente Produção" .
-- Dependências do backend : express, cors, mongoose, aws-sdk, morgan, multer, multers3
+- Dependências do backend : express ' framework para criação de API, Cors ' Cross-Origin Resource Sharing, Middleware que se integra com express para Requisiçoes HTTP' , Mongoose ' Mongoose é uma biblioteca de programação orientada a objetos que cria a modelagem de 
+ dados para o mongodb' , aws-sdk 'ferramenta de desenvolvido para integrações com serviços AWS' , morgan'armazenar logs de requisição HTTP', Multer ' Middleware para tratar os multipart/form-data que são arquivos de uploading ' , multers3
 - Dependências de Desenvolvimento : dotenv, nodemon
 - Docker para ambiente de desenvolvomento porem opcional.
 

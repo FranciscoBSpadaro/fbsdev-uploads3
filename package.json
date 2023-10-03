@@ -11,17 +11,19 @@
   "author": "FBS-DEV",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.935.0",
+    "@aws-sdk/client-s3": "^3.423.0",
+    "aws-sdk": "^2.1468.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mongoose": "^5.12.15",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.3",
     "morgan": "^1.10.0",
-    "multer": "^1.4.2",
-    "multer-s3": "^2.9.0"
+    "multer": "^1.4.5-lts.1",
+    "multer-s3": "^3.0.1"
   },
   "devDependencies": {
-    "dotenv": "^10.0.0",
-    "nodemon": "^2.0.7"
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1",
+    "yarn-upgrade-all": "^0.7.2"
   },
   "resolutions": {
     "fs-capacitor": "3.0.0"

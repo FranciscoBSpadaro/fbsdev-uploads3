@@ -1,4 +1,4 @@
-if (process.env.NODE_ENV !== 'production') { // se ambiente for difente de produção então use o dotenv , no caso ambiente development
+if (process.env.NODE_ENV !== 'production') { // se ambiente for difente de produção então use o dotenv , no caso de ambiente development
 require('dotenv').config()
 }
 const express = require('express')
@@ -8,7 +8,7 @@ const path = require('path')
 const cors = require('cors')
 const app = express()
 
-// multer importado para tratar errorHandler de arquivo grande 
+// multer importado para tratar os uploads e errorHandler para arquivos grandes
 const multer = require('multer')
 
 // database setup

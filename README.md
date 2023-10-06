@@ -22,24 +22,19 @@ online :   http://fbs-dev-uploads3.us-east-1.elasticbeanstalk.com
 #### Iniciando o Projeto.
 
 - Instalar o docker para o desenvolvimento local com o mongdb  ' opcional '
- - Pull mongo image from docker hub: docker pull mongo
- - Run image: docker run --name my_mongo -p 27017:27017 -d mongo
+  - Pull mongo image from docker hub: docker pull mongo
+  - Run image: docker run --name my_mongo -p 27017:27017 -d mongo
 
 ou use o mongodb atlas
 
 - Criar conta no MongoDb Atlas
- - https://account.mongodb.com/account/login
- - crie um ambiente de desenvolvimento para seus projetos
- - crie um cluster M0 que é gratuito , AWS N.Virginia
- - crie uma database com o nome que preferir e  em collections coloque o nome ' posts ' 
- - em Cluster clique em connect para ter a url que será usada na variavel de ambiente
- - exemplo : mongo_url  = mongodb+srv://user:password@cluster0.ian5y.mongodb.net/RepoName?retryWrites=true&w=majority
- - Criar um usuário e senha com acesso adm e com ip liberado , o usuario e senha tem que colocar na url mongo_url , substituir o ' user ' pelo seu usuário e password pela sua senha.
-
-start script: ' yarn dev  or npm run dev'   - for dev environment
-
-'yarn start or npm start' for production
-
+  - https://account.mongodb.com/account/login
+  - crie um ambiente de desenvolvimento para seus projetos
+  - crie um cluster M0 que é gratuito , AWS N.Virginia
+  - crie uma database com o nome que preferir e  em collections coloque o nome ' posts ' 
+  - em Cluster clique em connect para ter a url que será usada na variavel de ambiente
+  - exemplo : mongo_url  = mongodb+srv://user:password@cluster0.ian5y.mongodb.net/RepoName?retryWrites=true&w=majority
+  - Criar um usuário e senha com acesso adm e com ip liberado , o usuario e senha tem que colocar na url mongo_url , substituir o ' user ' pelo seu usuário e password pela sua senha.
 
 #### dotenv.
 dote env é necessario para o ambiente de desenvolvimento ,  npm install dotenv.
@@ -70,6 +65,9 @@ NODE_ENV=production
 Na aws crie um user e crie as credênciais de acesso para chamadas de api e adicione uma permissão para o usuario com politicas de acesso full ao bucketS3
 ' AmazonS3FullAccess ' 
 
+- Iniciar a API :
+  - no terminal digite : ' yarn dev  or npm run dev'   -  para usar os modulos de ambiente de desenvolvimento como ' nodemon ' 
+  - 'yarn start or npm start' para produção
 
 
 no ambiente de desenvolviemento pode testar as rotas usando insomnia ou postman com as rotas abaixo:
@@ -81,17 +79,18 @@ no ambiente de desenvolviemento pode testar as rotas usando insomnia ou postman 
 
 
 - Esse projeto foi  inicialmente projetado para funcionar no Heroku mas devido a mudanças de cobrança pelos serviços e evitar custos , fiz a mudança para AWS.
- -  Procfile foi adicionado para executar o comando  start ' do app conforme package.json ,mais detalhes nos historicos de commit.
- -  O upload do app pelo ElasticBeanStalk  deve ser compactado no formato zip , para isso baixar o projeto via git clone , e dentro da pasta do projeto abrir o git bash e digitar ' git archive --format=zip HEAD > myapp.zip '   e ira compactar o app no padrão aceito pelo ElasticBeanStalk.
- -  
-####ElasticBeanStalk Environments
+ -  Procfile foi adicionado para executar o script ' start ' definido no package.json , ' web: node src/index.js '.
+ -  ElasticBeanStalk : O upload do app para o ElasticBeanStalk , deve ser compactado no formato zip , para isso baixar o projeto via git clone , e dentro da pasta do projeto abrir o git bash e digitar ' git archive --format=zip HEAD > myapp.zip '   e ira compactar o app no padrão aceito pelo ElasticBeanStalk.
+    
+#### ElasticBeanStalk Environments
 - Node.js  18
 - 64bit Amazon Linux 2/5.8.5
-- copy elastic beanstalk url domain,   add it to ' APP_URL' env
-- ElasticBeanStalk usa porta 80 e faz requições http , nao faz https por padrão ao nao ser se comprar um dominio https
+- Single instance ' free tier elegible .
 
 - Observações
- - não atualizar os modulos para a ultima versão ' @latest'  , está dando conflitos e causa erros para fazer uploads
+  - Não atualizar os modulos para a ultima versão ' @latest'  , está dando conflitos e causa erros para fazer uploads
+  - copiar o endereço do domain do ElasticBeanStalk e adicionar na variável, ' APP_URL'
+  - ElasticBeanStalk usa porta 80 e faz requições http , para https tem que  comprar um domínio da aws.
 
 
 ### frontend repo : https://github.com/FranciscoBSpadaro/fbsdev-reacts3

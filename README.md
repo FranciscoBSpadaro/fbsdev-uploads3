@@ -1,12 +1,11 @@
 # UploadImagesS3
 Upload  images s3 + mongodb
-online :   https://fbs-dev-uploads3.herokuapp.com/
-edit : off line  heroku pedindo para adicionar cartão de credito para cobrar pelos serviços.  vou criar o projeto via AWS.
+online :   
 
 
 ### Caso de uso
-- Objetivo desse mini projeto é elaborar uma aplicação web de upload de imagens
-- Utilizando Node.js + React , Mongodb, Heroku , AWS
+- Objetivo desse mini projeto é elaborar uma aplicação web de upload de imagens exemplo, IMGUR
+- Utilizando Node.js + React , Mongodb, AWS S3 , AWS Elastic BeanStalk.
 - Utilizar princípios de CDN 'Content Delivery Network' e ter escalabilidade e distribuição ,  armazenar arquivos estáticos de imagens no bucket AWS S3 , visando redução de custos de armazendo e não armazenar no proprio servidor ou app.
 - Mongdb Atlas, vai armazenar endereços das imagens para o Aws s3 e gerenciar o CRUD.  " Ambiente Produção" .
 - Dependências do backend : express ' framework para criação de API, Cors ' Cross-Origin Resource Sharing, Middleware que se integra com express para Requisiçoes HTTP' , Mongoose ' Mongoose é uma biblioteca de programação orientada a objetos que cria a modelagem de 
@@ -31,7 +30,7 @@ start script: ' yarn dev  or npm run dev'   - for dev environment
 'yarn start or npm start' for production
 
 #### dotenv.
-create .env file in root of project and add the follow lines
+create .env file in root of project and add the follow lines   env dev or production
 
 ````
 APP_URL=http://localhost:3000
@@ -55,21 +54,27 @@ NODE_ENV=production
 ````
   
 use aws credential for api calls !!
-
+in elastic Beans stalk variables, add the same .env vars...
+Procfile add to project for Elastic Beanstalk
 
 using insonmmia for upload images , list , and delete 
-
+local development routes:
 ### get route = http://localhost:3000/posts
 
 ### post route = http://localhost:3000/posts  with multpart mode  in name field put ' file '  and next select you image for upload
 
 ### delete route = http://localhost:3000/posts/ ' id of image ' will delete using image id  and it will be removed from storage and mongodb
 
-### for production this project i will use heroku
-Procfile add to project.
-in heroku dashboad go to settings / config vars and add environment variables
-
-
+Esse projeto foi inicialmente desenvolvindo apartir da aula da ' RocketSeat' inicialmente projetado para funcionar no Heroku
+para evitar custos no heroku fiz a mudança para AWS.
+e com isso o Procfile foi alterado, mais detalhes nos historicos de commit.
+para fazer o upload do app pelo ElasticBeanStalk  deve ser compactado no formato zip , para isso baixar o projeto via git clone , e dentro da pasta do projeto abrir o git bash e digitar ' git archive --format=zip HEAD > myapp.zip '   e ira compactar o app no padrão aceito pelo ElasticBeanStalk.
+####ElasticBeanStalk Environments
+- Node.js  18
+- 64bit Amazon Linux 2/5.8.5
+- copy elastic beanstalk url domain,  example  http://fbsdev-backend1.us-east-1.elasticbeanstalk.com  add it to ' APP_URL' env
+- config security group with https , default elastic sg uses http, and this sg can be deleted after environments rebuilds
+   - after run environment and status green you can test get rout , example : -  http://fbsdev-backend1.us-east-1.elasticbeanstalk.com/posts  
 
 
 tutorial heroku para uso do bucket s3  https://devcenter.heroku.com/articles/s3-upload-node

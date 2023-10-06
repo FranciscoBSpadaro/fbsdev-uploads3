@@ -26,7 +26,7 @@ const multer = require('multer')
     }
 // liberar request to XMLHttpRequest da origin do meu front end
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://fbs-dev-uploads3.us-east-1.elasticbeanstalk.com")
+  res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE,OPTIONS')
   app.use(cors())
   next()

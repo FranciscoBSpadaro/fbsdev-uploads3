@@ -29,6 +29,7 @@ start script: ' yarn dev  or npm run dev'   - for dev environment
 
 'yarn start or npm start' for production
 
+
 #### dotenv.
 create .env file in root of project and add the follow lines   env dev or production
 
@@ -64,6 +65,9 @@ local development routes:
 ### post route = http://localhost:3000/posts  with multpart mode  in name field put ' file '  and next select you image for upload
 
 ### delete route = http://localhost:3000/posts/ ' id of image ' will delete using image id  and it will be removed from storage and mongodb
+
+- Observações
+- não atualizar os modulos para a ultima versão. 
 
 Esse projeto foi inicialmente desenvolvindo apartir da aula da ' RocketSeat' inicialmente projetado para funcionar no Heroku
 para evitar custos no heroku fiz a mudança para AWS.

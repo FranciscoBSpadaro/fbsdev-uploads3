@@ -80,8 +80,8 @@ no ambiente de desenvolviemento pode testar as rotas usando insomnia ou postman 
 ### delete route = http://localhost:3000/posts/ ' id of image ' will delete using image id  and it will be removed from storage and mongodb
 
 
-- Esse projeto foi inicialmente desenvolvindo apartir da aula da ' RocketSeat' inicialmente projetado para funcionar no Heroku para evitar custos no heroku fiz a mudança para AWS.
- -  Procfile foi alterado para executar o comando  start ' do app conforme package.json ,mais detalhes nos historicos de commit.
+- Esse projeto foi  inicialmente projetado para funcionar no Heroku mas devido a mudanças de cobrança pelos serviços e evitar custos , fiz a mudança para AWS.
+ -  Procfile foi adicionado para executar o comando  start ' do app conforme package.json ,mais detalhes nos historicos de commit.
  -  O upload do app pelo ElasticBeanStalk  deve ser compactado no formato zip , para isso baixar o projeto via git clone , e dentro da pasta do projeto abrir o git bash e digitar ' git archive --format=zip HEAD > myapp.zip '   e ira compactar o app no padrão aceito pelo ElasticBeanStalk.
  -  
 ####ElasticBeanStalk Environments

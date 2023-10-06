@@ -93,4 +93,4 @@ no ambiente de desenvolviemento pode testar as rotas usando insomnia ou postman 
   - ElasticBeanStalk usa porta 80 e faz requições http , para https tem que  comprar um domínio da aws.
 
 
-### frontend repo : https://github.com/FranciscoBSpadaro/fbsdev-reacts3
+### front-end repo : https://github.com/FranciscoBSpadaro/fbsdev-reacts3

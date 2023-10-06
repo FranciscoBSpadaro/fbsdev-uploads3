@@ -1,6 +1,6 @@
 # UploadImagesS3
-Upload  images s3 + mongodb
-online :   
+### WebApp Integrado com AWS ElasticBeanStalk + AWS S3 + MONGODB
+online :   http://fbs-dev-uploads3.us-east-1.elasticbeanstalk.com
 
 
 ### Caso de uso
@@ -72,9 +72,7 @@ para fazer o upload do app pelo ElasticBeanStalk  deve ser compactado no formato
 ####ElasticBeanStalk Environments
 - Node.js  18
 - 64bit Amazon Linux 2/5.8.5
-- copy elastic beanstalk url domain,  example  http://fbsdev-backend1.us-east-1.elasticbeanstalk.com  add it to ' APP_URL' env
-- config security group with https , default elastic sg uses http, and this sg can be deleted after environments rebuilds
-   - after run environment and status green you can test get rout , example : -  http://fbsdev-backend1.us-east-1.elasticbeanstalk.com/posts  
+- copy elastic beanstalk url domain,   add it to ' APP_URL' env
 
 
 tutorial heroku para uso do bucket s3  https://devcenter.heroku.com/articles/s3-upload-node

@@ -67,7 +67,7 @@ AWS_DEFAULT_REGION=us-east-1
 NODE_ENV=production
 ````
   
-Na aws crie um user e crie as credênciais de acesso para requisições http e adicione uma role para o usuario com politicas de acesso full ao bucketS3
+Na aws crie um user e crie as credênciais de acesso para chamadas de api e adicione uma role para o usuario com politicas de acesso full ao bucketS3
 
 
 

@@ -93,8 +93,19 @@ no ambiente de desenvolviemento pode testar as rotas usando insomnia ou postman 
   - ElasticBeanStalk usa porta 80 e faz requições http , para https tem que  comprar um domínio da aws.
   - adicionado o arquivo nginx.config
   - Isso substituirá o arquivo proxy.conf no diretório /etc/nginx/conf.d/ do servidor Nginx.
-  - Agora, o Nginx do ElasticBeanStalk é capaz de aceitar arquivos de imagens de 8 MB adicionando a linha "client_max_body_size 8m"
+  - Com isso o Nginx do ElasticBeanStalk deveria ser capaz de aceitar arquivos de imagens de 8 MB adicionando a linha "client_max_body_size 8m"
   - Por Padrão do nginx ele só aceita request de arquivo de até 1mb
+  - porem descobri que essa configuração só servia para o sistema    Amazon Linux 1.
+  - Configurando nginx no 64bit Amazon Linux 2/5.8.5:
+  - os arquivos de configuração nginx devem estar em '.platform', não em .ebextensions as como explicado e exemplificado no AWS docs do AmazonLinux2: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-linux-extend.html
+
+  - configuração de Reverse proxy para AmazonLinux2 :
+  - criar a pasta: .platform/nginx/conf.d/myconf.conf , que contem:
+  ``
+  http {
+      client_max_body_size 8M;
+}
+  ``
   - Lembre-se de que essa solução é específica para o Elastic Beanstalk da AWS. 
   - Se você estiver usando outro serviço da AWS ou um provedor de hospedagem diferente, as etapas para aplicar a configuração podem variar.
   - No entanto, é importante lembrar que aumentar o limite máximo do corpo do cliente pode ter implicações de segurança e desempenho, então certifique-se de ajustar esse valor de acordo com suas necessidades específicas.

@@ -91,12 +91,13 @@ no ambiente de desenvolviemento pode testar as rotas usando insomnia ou postman 
   - Não atualizar os modulos para a ultima versão ' @latest'  , está dando conflitos e causa erros para fazer uploads
   - copiar o endereço do domain do ElasticBeanStalk e adicionar na variável, ' APP_URL'
   - ElasticBeanStalk usa porta 80 e faz requições http , para https tem que  comprar um domínio da aws.
-  - adicionado o arquivo nginx.config.
-  - Agora, o Nginx do ElasticBeanStalk é capaz de aceitar arquivos de imagens de 8 MB.
-  - Isso substituirá o arquivo proxy.conf no diretório /etc/nginx/conf.d/ do servidor Nginx, adicionando a linha client_max_body_size 8m
+  - adicionado o arquivo nginx.config
+  - Isso substituirá o arquivo proxy.conf no diretório /etc/nginx/conf.d/ do servidor Nginx.
+  - Agora, o Nginx do ElasticBeanStalk é capaz de aceitar arquivos de imagens de 8 MB adicionando a linha "client_max_body_size 8m"
+  - Por Padrão do nginx ele só aceita request de arquivo de até 1mb
   - Lembre-se de que essa solução é específica para o Elastic Beanstalk da AWS. 
   - Se você estiver usando outro serviço da AWS ou um provedor de hospedagem diferente, as etapas para aplicar a configuração podem variar.
   - No entanto, é importante lembrar que aumentar o limite máximo do corpo do cliente pode ter implicações de segurança e desempenho, então certifique-se de ajustar esse valor de acordo com suas necessidades específicas.
-  - o arquivo multer.js já está configurado para 8mb porem antes so funcionava em ambiente de desenvolvimento.
+  - o arquivo multer.js já está configurado para 8mb porem antes só funcionava em ambiente de desenvolvimento.
 
 ### front-end repo : https://github.com/FranciscoBSpadaro/fbsdev-reacts3

@@ -97,15 +97,16 @@ no ambiente de desenvolviemento pode testar as rotas usando insomnia ou postman 
   - Por Padrão do nginx ele só aceita request de arquivo de até 1mb
   - porem descobri que essa configuração só servia para o sistema    Amazon Linux 1.
   - Configurando nginx no 64bit Amazon Linux 2/5.8.5:
-  - os arquivos de configuração nginx devem estar em '.platform', não em .ebextensions as como explicado e exemplificado no AWS docs do AmazonLinux2: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-linux-extend.html
+  - os arquivos de configuração nginx devem estar em '.platform', não em .ebextensions como explicado e exemplificado no AWS docs do AmazonLinux2: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-linux-extend.html
 
   - configuração de Reverse proxy para AmazonLinux2 :
   - criar a pasta: .platform/nginx/conf.d/myconf.conf , que contem:
   ``
-  http {
-      client_max_body_size 8M;
-}
+sendfile on;
+client_max_body_size 8m;
+client_body_buffer_size 8m;
   ``
+  - agora o nginx aceita envio de imagens até 8mb.
   - Lembre-se de que essa solução é específica para o Elastic Beanstalk da AWS. 
   - Se você estiver usando outro serviço da AWS ou um provedor de hospedagem diferente, as etapas para aplicar a configuração podem variar.
   - No entanto, é importante lembrar que aumentar o limite máximo do corpo do cliente pode ter implicações de segurança e desempenho, então certifique-se de ajustar esse valor de acordo com suas necessidades específicas.

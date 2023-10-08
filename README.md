@@ -71,16 +71,15 @@ Na aws crie um user e crie as credênciais de acesso para chamadas de api e adic
 
 
 no ambiente de desenvolviemento pode testar as rotas usando insomnia ou postman com as rotas abaixo:
-### get route = http://localhost:3000/posts
+#### get route = http://localhost:3000/posts
 
-### post route = http://localhost:3000/posts  with multpart mode  in name field put ' file '  and next select you image for upload
-
-### delete route = http://localhost:3000/posts/ ' id of image ' will delete using image id  and it will be removed from storage and mongodb
-
-
-- Esse projeto foi  inicialmente projetado para funcionar no Heroku mas devido a mudanças de cobrança pelos serviços e evitar custos , fiz a mudança para AWS.
- -  Procfile foi adicionado para executar o script ' start ' definido no package.json , ' web: node src/index.js '.
- -  ElasticBeanStalk : O upload do app para o ElasticBeanStalk , deve ser compactado no formato zip , para isso baixar o projeto via git clone , e dentro da pasta do projeto abrir o git bash e digitar ' git archive --format=zip HEAD > myapp.zip '   e ira compactar o app no padrão aceito pelo ElasticBeanStalk.
+#### post route = http://localhost:3000/posts  
+- no insomnia configurar o post como ' Multipart Form ' e o nome adicionar ' file ' e depois selecionar uma imagen e enviar o post.
+#### delete route = http://localhost:3000/posts/ ' + id da imagem ' 
+- Isso vai deletar a imagem com seu respectivo id e vai remover a imagem do bucket s3 e o registro do url no mongodb
+-  Procfile foi adicionado para executar o script ' start ' definido no package.json , ' web: node src/index.js '.
+- Esse projeto foi  inicialmente projetado para funcionar no Heroku mas devido a mudanças de cobrança pelos serviços e evitar custos , fiz a mudança para AWS. por isso o arquivo Procfile não se faz necessário.
+#### ElasticBeanStalk : O upload do app para o ElasticBeanStalk , deve ser compactado no formato zip , para isso baixar o projeto via git clone , e dentro da pasta do projeto abrir o git bash e digitar ' git archive --format=zip HEAD > myapp.zip '   e ira compactar o app no padrão aceito pelo ElasticBeanStalk.
     
 #### ElasticBeanStalk Environments
 - Node.js  18
@@ -100,7 +99,7 @@ no ambiente de desenvolviemento pode testar as rotas usando insomnia ou postman 
   - os arquivos de configuração nginx devem estar em '.platform', não em .ebextensions como explicado e exemplificado no AWS docs do AmazonLinux2: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-linux-extend.html
 
   - configuração de Reverse proxy para AmazonLinux2 :
-  - criar a pasta: .platform/nginx/conf.d/myconf.conf , que contem:
+  - criado a pasta: .platform/nginx/conf.d/myconf.conf , que contem:
   ``
 sendfile on;
 client_max_body_size 8m;
